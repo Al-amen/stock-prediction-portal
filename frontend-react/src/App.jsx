@@ -1,12 +1,16 @@
-
-import './App.css'
+import './assets/css/style.css'
+import Footer from './compnents/Footer'
+import Header from './compnents/Header'
+import Main from './compnents/Main'
 
 function App() {
   
 
   return (
     <>
-      <h1>hello world</h1>
+      <Header/>
+      <Main/>
+      <Footer/>
     </>
   )
 }
