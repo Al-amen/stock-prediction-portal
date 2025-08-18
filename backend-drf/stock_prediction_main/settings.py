@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     #3rd party app
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
     
     #custom app
     'accounts',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -187,3 +189,6 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')  # SMTP server username
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # SMTP server password
 EMAIL_USE_SSL = False  # Set to True if using SSL
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')  # Default sender email address
+
+
+CORS_ALLOW_ALL_ORIGINS = True

@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Button = (props) => {
   return (
     <>
-        <a className={`btn ${props.class}`} href="">{props.text}</a>
+        <Link to={props.path} className={`btn ${props.class}`} >{props.text}</Link>
     </>
   )
 }

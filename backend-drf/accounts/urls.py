@@ -7,7 +7,7 @@ urlpatterns = [
    #Authentication Endpoint
    path("user/login/", views.LoginAPIView.as_view(), name="login"),
    path("user/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-   path('user/registration/',views.RegisterAPIView.as_view()),
+   path('user/register/',views.RegisterAPIView.as_view()),
    path('user/verify-email/', views.VerifyEmailAPIView.as_view(), name='verify-email'),
    path('user/resend-verify-email/',views.ResendVerificationAPIView.as_view(),name='resend-verify-email'),
    path("user/password-reset/", views.PasswordResetRequestAPIView.as_view(), name="password_reset"),
