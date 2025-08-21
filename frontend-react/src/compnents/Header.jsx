@@ -16,6 +16,7 @@ const Header = () => {
         navigate('/login');
 
     }
+    
 
   return (
     <>
@@ -26,7 +27,10 @@ const Header = () => {
             <div>
                 {isLoggedIn ? (
                     <>
+                    <Link to='/dashboard' className='btn btn-info'>Dashboard</Link>
+                    &nbsp;
                     <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
+
                     </>
                 ) : (
                     <>

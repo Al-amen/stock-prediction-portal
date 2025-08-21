@@ -22,14 +22,14 @@ const Login = () => {
     setMessage('');
 
     try {
-      const res = await axiosInstance.post(`user/login/`, formData);
+      const res = await axiosInstance.post('user/login/', formData);
       saveToken(res.data.access, res.data.refresh);
       Toast().fire({
         icon: 'success',
         title: 'Successfully Logged In',
       });
       setIsLoggedIn(true);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       console.log("Login error",error)
       setMessage('Invalid email or password');

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axiosInstance from '../api/axiosConfig';
 import Toast from '../plugin/Toast';
 import axios from 'axios';
 

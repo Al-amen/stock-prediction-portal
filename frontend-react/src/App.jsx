@@ -9,6 +9,9 @@ import Footer from './compnents/Footer';
 import VerifyEmailHandler from './auth/VerifyEmailHandler';
 import AuthProvider from './context/AuthProvider';
 import PasswordResetConfirm from './auth/PasswordResetConfirm';
+import Dashboard from './compnents/dashboard/Dashboard';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
 
 
 
@@ -23,11 +26,16 @@ function App() {
       <Header/>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path='/register' element={<Register/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/forgot-password' element={<ForgotPassword/>} />
-          <Route path="/reset-password/:uidb64/:token" element={<PasswordResetConfirm/>} />
-          <Route path="/verify-email" element={<VerifyEmailHandler />} />
+          
+          <Route path='/register' element={<PublicRoute><Register/></PublicRoute>} />
+          <Route path='/login' element={<PublicRoute><Login/></PublicRoute>} />
+          <Route path='/forgot-password' element={<PublicRoute><ForgotPassword/></PublicRoute>} />
+          <Route path="/reset-password/:uidb64/:token" element={<PublicRoute><PasswordResetConfirm/></PublicRoute>} />
+          <Route path="/verify-email" element={<PublicRoute><VerifyEmailHandler /></PublicRoute>} />
+
+
+          <Route path='/dashboard' element={<PrivateRoute> <Dashboard/> </PrivateRoute>} />
+          
           
         </Routes>
         <Footer/>
