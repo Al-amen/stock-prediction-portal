@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Toast from '../plugin/Toast';
+import Toast from '../../plugin/Toast';
 import axios from 'axios';
 
 const Register = () => {

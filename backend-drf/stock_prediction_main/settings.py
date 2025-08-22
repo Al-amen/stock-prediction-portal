@@ -193,3 +193,6 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')  # Default sender email addres
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media'

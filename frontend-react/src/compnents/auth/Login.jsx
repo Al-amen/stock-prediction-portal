@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axiosInstance from '../api/axiosConfig';
-import { saveToken } from '../utils/auth';
-import Toast from '../plugin/Toast';
-import { AuthContext } from '../context/AuthProvider';
+import axiosInstance from '../../api/axiosConfig'
+import { saveToken } from '../../utils/auth'
+import Toast from '../../plugin/Toast'
+import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });

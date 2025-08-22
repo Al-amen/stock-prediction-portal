@@ -7,6 +7,7 @@ import { AuthContext } from '../context/AuthProvider';
 
 const PrivateRoute = ({children}) => {
     const {isLoggedIn,setIsLoggedIn} = useContext(AuthContext);
+    console.log('privavte route login', isLoggedIn)
   
     return isLoggedIn ? (
       children

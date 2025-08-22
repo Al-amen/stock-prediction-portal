@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axiosInstance from '../api/axiosConfig';
-import Toast from '../plugin/Toast';
+
 import axios from 'axios';
+import Toast from '../../plugin/Toast';
 
 const PasswordResetConfirm = () => {
   const { uidb64, token } = useParams();

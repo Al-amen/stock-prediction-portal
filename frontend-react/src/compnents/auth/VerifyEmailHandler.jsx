@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import axiosInstance from '../api/axiosConfig';
 import axios from 'axios';
 
 const VerifyEmailHandler = () => {

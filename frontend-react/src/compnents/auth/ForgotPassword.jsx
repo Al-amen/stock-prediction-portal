@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axiosInstance from '../api/axiosConfig';
-import Toast from '../plugin/Toast';
 import axios from 'axios';
+import Toast from '../../plugin/Toast';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
