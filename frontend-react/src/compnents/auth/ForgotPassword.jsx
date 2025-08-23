@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Toast from '../../plugin/Toast';
+import axiosInstance from '../../api/axiosConfig';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -14,8 +15,8 @@ const ForgotPassword = () => {
   
     try {
       // ✅ await the POST request
-      const res = await axios.post(
-        `http://127.0.0.1:8000/api/v1/user/password-reset/`,
+      const res = await axiosInstance.post(
+        `user/password-reset/`,
         { email }
       );
       localStorage.removeItem('access_token');

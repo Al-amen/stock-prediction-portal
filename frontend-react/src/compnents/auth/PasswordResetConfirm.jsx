@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 import Toast from '../../plugin/Toast';
+import axiosInstance from '../../api/axiosConfig';
 
 const PasswordResetConfirm = () => {
   const { uidb64, token } = useParams();
@@ -34,7 +35,7 @@ const PasswordResetConfirm = () => {
     }
 
     try {
-      const res = await axios.post(`http://127.0.0.1:8000/api/v1/user/reset-password-confirm/${uidb64}/${token}/`, {
+      const res = await axiosInstance.post(`user/reset-password-confirm/${uidb64}/${token}/`, {
         new_password: formData.new_password,
         confirm_password: formData.confirm_password
       });

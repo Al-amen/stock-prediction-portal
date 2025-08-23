@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Toast from '../../plugin/Toast';
 import axios from 'axios';
+import axiosInstance from '../../api/axiosConfig';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/user/register/`, {
+      const res = await axiosInstance.post(`user/register/`, {
         username,
         email,
         password,

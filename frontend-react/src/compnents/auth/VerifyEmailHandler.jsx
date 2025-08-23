@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
+import axiosInstance from '../../api/axiosConfig';
 
 const VerifyEmailHandler = () => {
     const [searchParam] = useSearchParams();
@@ -17,8 +18,8 @@ const VerifyEmailHandler = () => {
         const verify = async () => {
             try {
                 // ✅ Call Django backend, not React dev server
-                const res = await axios.get(
-                    `http://127.0.0.1:8000/api/v1/user/verify-email/?token=${token}`
+                const res = await axiosInstance.get(
+                    `user/verify-email/?token=${token}`
                   );
                 localStorage.removeItem('access_token');
                 localStorage.removeItem('refresh_token');
